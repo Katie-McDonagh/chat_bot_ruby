@@ -13,11 +13,7 @@ class ChangeConverter
                 elsif num >= option && option < 1
                     bigD = option.round(2)
                     results_array.push("#{(bigD * 100).to_i}p")
-                    p bigD
-                    p results_array
-                    bigNum = num.round(2)
-                    num = (bigNum - bigD).round(2)
-                    p num
+                    num = (num - bigD).round(2)
                 end
             end
         end
