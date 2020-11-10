@@ -12,4 +12,9 @@ describe 'change_converter' do
         expect(change_converter.convert(70)).to eq(["£50", "£20"])
     end
 
+    it('pushes all change amounts above £1 into the results_array') do
+        expect(change_converter.convert(88)).to eq(["£50", "£20", "£10", "£5", "£2", "£1"])
+        expect(change_converter.convert(60)).to eq(["£50", "£10"])
+    end
+
 end
