@@ -1,15 +1,14 @@
 class ChangeConverter
     
     def convert(num)
-        # ["£#{num}"]
         results_array = []
+        change_denominations = [50, 20]
         while num > 0 do
-            if num >= 50
-                results_array.push("£50")
-                num -= 50
-            elsif num >= 20 && num < 50
-                results_array.push("£20")
-                num -= 20
+            change_denominations.each do |option|
+                if num >= option
+                    results_array.push("£#{option}")
+                    num -= option
+                end
             end
         end
 
@@ -18,3 +17,4 @@ class ChangeConverter
     end
 
 end
+
